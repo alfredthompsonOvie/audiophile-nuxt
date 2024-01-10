@@ -1,12 +1,18 @@
-<template class="container">
-  <TheNavBar />
-	<main class="main">
-		<NuxtPage />
-	</main>
-  <BaseFooter />
+<template>
+	<div>
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
+	</div>
 </template>
 
 <style>
+/* <!--  --> 
+<!-- <AppNavBar />
+<main class="main">
+  <NuxtPage />
+</main>
+<AppFooter /> -->*/
 /* .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -14,7 +20,7 @@
 
 } */
 button {
-  border: 0;
-  background-color: transparent;
+	border: 0;
+	background-color: transparent;
 }
 </style>

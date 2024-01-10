@@ -1,6 +1,6 @@
-<template >
-  <div class="main__contents">
-    <section class="hero">
+<template>
+	<div class="main__contents">
+		<section class="hero">
 			<section class="hero__contents">
 				<picture>
 					<source
@@ -15,7 +15,10 @@
 						srcset="~/assets/images/home/tablet/image-header.jpg"
 						media="(min-width: 450px)"
 					/>
-					<img src="~/assets/images/home/mobile/image-header.jpg" alt="mark II headphones" />
+					<img
+						src="~/assets/images/home/mobile/image-header.jpg"
+						alt="mark II headphones"
+					/>
 				</picture>
 				<section class="hero__details">
 					<h1 class="subHeading">new product</h1>
@@ -24,20 +27,100 @@
 						Experience natural, lifelike audio and exceptional build quality
 						made for the passionate music enthusiast.
 					</p>
-          <NuxtLink to="" class="cta cta--prim">
-            <span>see product</span>
-          </NuxtLink>
+					<NuxtLink to="" class="cta cta--prim">
+						<span>see product</span>
+					</NuxtLink>
 					<!-- <router-link :to="{ name: 'productDetail', params: { id: 'headphones/xx99-mark-II-headphones' }}" class="cta cta--prim"
 						>see product</router-link
 					> -->
 				</section>
 			</section>
 		</section>
-  </div>
+
+		<section class="category grid">
+			<BaseCategoryLinks class="grid__content catLinks" />
+		</section>
+
+		<section class="products">
+			<section class="grid__content">
+				<section class="product__contents product__speaker--zx9">
+					<picture>
+						<source
+							srcset="~/assets/images/home/desktop/image-speaker-zx9.png"
+							media="(min-width: 992px)"
+						/>
+						<source
+							srcset="~/assets/images/home/tablet/image-speaker-zx9.png"
+							media="(min-width: 600px)"
+						/>
+						<img src="~/assets/images/home/mobile/image-speaker-zx9.png" alt="" />
+					</picture>
+					<section class="product__content">
+						<h1 class="heading">zx9 Speakers</h1>
+						<p>
+							Upgrade to premium speakers that are phenomenally built to deliver
+							truly remarkable sound.
+						</p>
+
+						<!-- <NuxtLink :to="{ name: 'productDetail', params: { id: 'speakers/zx9-speaker' }}" class="cta cta--sec"
+						>see product</
+					> -->
+					<NuxtLink to="" class="cta cta--sec">see product</NuxtLink>
+					</section>
+				</section>
+				<!--  -->
+				<!--  -->
+				<!--  -->
+				<section class="product__contents product--zx7-speakers">
+					<picture>
+						<source
+							srcset="~/assets/images/home/desktop/image-speaker-zx7.jpg"
+							media="(min-width: 992px)"
+						/>
+						<source
+							srcset="~/assets/images/home/tablet/image-speaker-zx7.jpg"
+							media="(min-width: 600px)"
+						/>
+						<img src="~/assets/images/home/mobile/image-speaker-zx7.jpg" alt="" />
+					</picture>
+					<section class="product__content--zx7">
+						<h1 class="heading--alt">zx7 Speakers</h1>
+
+					<NuxtLink to="" class="cta cta--alt">see product</NuxtLink>
+					</section>
+				</section>
+				<!--  -->
+				<!--  -->
+				<!--  -->
+				<section class="product__contents product--earphones">
+
+					<picture>
+						<source
+							srcset="~/assets/images/home/desktop/image-earphones-yx1.jpg"
+							media="(min-width: 992px)"
+						/>
+						<source
+							srcset="~/assets/images/home/tablet/image-earphones-yx1.jpg"
+							media="(min-width: 600px)"
+						/>
+						<img src="~/assets/images/home/mobile/image-earphones-yx1.jpg" alt="" />
+					</picture>
+					<section class="product__content--yx1">
+						<h1 class="heading--alt">yx1 earphones</h1>
+					<NuxtLink to="" class="cta cta--alt">see product</NuxtLink>
+					</section>
+				</section>
+			</section>
+		</section>
+
+		<AppAbout class="index"/> 
+	</div>
 </template>
 
 <script setup>
-
+// definePageMeta({
+// 	layout: "default"
+// })
 </script>
 
 <style lang="scss" scoped>
@@ -45,8 +128,8 @@
 	padding-inline: 0;
 }
 .hero {
-  grid-column: 1/-1;
-  grid-row: 1;
+	grid-column: 1/-1;
+	grid-row: 1;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	background-color: #0e0e0e;
 }
@@ -59,9 +142,11 @@
 }
 .category {
 	margin-top: 5em;
+	grid-column: 1/-1;
 }
 .products {
 	margin-top: 4em;
+	grid-column: 2;
 }
 .product__speaker--zx9 {
 	background-color: #d87d4a;
@@ -69,9 +154,12 @@
 	padding: 3em 1em;
 	text-align: center;
 	color: #fff;
-	background-image: url(@/assets/images/oval.svg);
+	background-image: url("~/assets/images/home/desktop/pattern-circles.svg");
 	background-repeat: no-repeat;
-	background-position: top center;
+	background-position: top;
+}
+.product__speaker--zx9 img {
+	width: 12em;
 }
 .product__speaker--zx9 h1 {
 	max-width: 200px;
@@ -97,10 +185,6 @@
 .product--zx7-speakers {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 12.5em;
-	grid-template-rows: 18.5em;
-	grid-template-rows: 15.5em;
-	grid-template-rows: 320px;
 	grid-template-rows: auto;
 }
 .product--zx7-speakers picture {
@@ -112,9 +196,6 @@
 .product--zx7-speakers img {
 	display: block;
 	width: 100%;
-	/* height: 320px; */
-
-	/* object-fit: cover; */
 }
 .product__content--zx7 {
 	grid-row: 1;
@@ -144,26 +225,23 @@
 	width: 100%;
 }
 .product__content--yx1 {
-	/* text-align: center; */
-	/* margin-top: 1em; */
 	background: #f1f1f1;
 	border-radius: 8px;
 	padding: 2em;
 }
 @media (min-width: 600px) {
-	.category {
+	.products {
 		margin-top: 0em;
 	}
-	.products {
-	margin-top: 0em;
-}
 	.btn--cart {
 		margin-left: auto;
 	}
 	.product__speaker--zx9 {
-		background-image: url(@/assets/images/oval-tablet.svg);
 		background-size: contain;
 	}
+	.product__speaker--zx9 img {
+	width: 14em;
+}
 	.product__speaker--zx9 p {
 		max-width: 350px;
 	}
@@ -171,14 +249,11 @@
 		padding-left: 3em;
 	}
 	.product--earphones {
-		/* flex-direction: row; */
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
 	}
-	/* .product--earphones img {
-	flex: 1;
-} */
+
 	.product__content--yx1 {
 		display: flex;
 		flex-direction: column;
@@ -188,8 +263,6 @@
 }
 @media (min-width: 600px) and (max-width: 992px) {
 	.hero__contents img {
-		/* width: 100%;
-	height: 100%; */
 		object-fit: cover;
 		object-position: center;
 	}
@@ -199,23 +272,20 @@
 	.hero {
 		background-color: #121212;
 		/* background-color: #1A1A1A; */
-    /* background-color: #191919; */
+		/* background-color: #191919; */
 	}
 	.hero__contents {
 		display: grid;
-		/* grid-template-columns: 1fr 4fr 6fr 1fr; */
 		grid-template-columns: 1fr 3fr 7fr 1fr;
 		grid-template-rows: calc(100vh - 5em);
 	}
 
 	.hero__contents picture {
-		/* grid-column: 3; */
 		grid-column: 3/-1;
 		grid-row: 1;
-		/* width: 100%; */
 	}
 	.hero__contents img {
-    object-position: center;
+		object-position: center;
 	}
 	.hero__details {
 		grid-column: 2;
@@ -223,14 +293,12 @@
 		text-align: left;
 		max-width: auto;
 		margin: 0;
-    
 	}
 
-  /* ----------------------------------------------------------------------------- */
+	/* ----------------------------------------------------------------------------- */
 	.product__speaker--zx9 {
-		background-image: url(~/assets/images/oval-desktop.svg);
-		background-position: left;
-		background-size: contain;
+		background-position: -200px;
+		background-size: cover;
 		text-align: left;
 
 		display: flex;
@@ -244,24 +312,21 @@
 		overflow: hidden;
 	}
 	.product__speaker--zx9 img {
+		width: 20em;
 		align-self: flex-end;
 		display: block;
 	}
 	.product__content {
-		align-self: flex-start;
-		/* margin-top: 1em; */
-		/* border-radius: 0; */
+		align-self: center;
+		margin-bottom: 2em;
 	}
 	.product__speaker--zx9 h1 {
 		max-width: auto;
 		margin-inline: 0;
+		margin-top: 0;
 		font-weight: 700;
-		font-size: 56px;
 		line-height: 58px;
-
-		font-size: 40px;
-		line-height: 40px;
-
+		line-height: 52px;
 		font-size: clamp(40px, 4vw, 56px);
 		letter-spacing: 2px;
 	}
@@ -271,13 +336,13 @@
 	.product__content--zx7 {
 		padding-left: 5em;
 	}
-		.product__content--yx1 {
+	.product__content--yx1 {
 		padding-left: 5em;
 	}
 }
 
 @media (min-width: 1350px) {
-  .hero__contents {
+	.hero__contents {
 		display: grid;
 		grid-template-columns: 1fr 4fr 6fr 1fr;
 		grid-template-rows: calc(100vh - 5em);
@@ -290,5 +355,4 @@
 		width: 100%;
 	}
 }
-
 </style>

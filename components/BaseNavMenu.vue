@@ -1,9 +1,9 @@
 <template>
 	<ul class="nav__menu">
 		<li><NuxtLink to="/">Home</NuxtLink></li>
-		<li><NuxtLink to="/headphones">Headphones</NuxtLink></li>
-		<li><NuxtLink to="/speakers">Speakers</NuxtLink></li>
-		<li><NuxtLink to="/earphones">Earphones</NuxtLink></li>
+		<li><NuxtLink to="/category-headphones">Headphones</NuxtLink></li>
+		<li><NuxtLink to="/category-speakers">Speakers</NuxtLink></li>
+		<li><NuxtLink to="/category-earphones">Earphones</NuxtLink></li>
 	</ul>
 </template>
 

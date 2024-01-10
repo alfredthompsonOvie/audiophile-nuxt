@@ -23,7 +23,13 @@
 
 <script setup>
 
-const isOpen = ref(false);
+
+defineProps({
+  isOpen: {
+    type: Boolean,
+    required: true
+  }
+})
 
 const windowWidth = ref(null);
 const isMobile = ref(null);
@@ -32,11 +38,9 @@ function checkScreen() {
   windowWidth.value = window.innerWidth;
 	if (windowWidth.value <= 991) {
 		isMobile.value = true;
-		isOpen.value = false;
 		return;
 	}
 	isMobile.value = false;
-	isOpen.value = false;
 	return;
 }
 onMounted(() => {

@@ -63,15 +63,30 @@
 <script setup></script>
 
 <style scoped>
+.shared {
+	grid-column: 2;
+	margin-top: 5em;
+}
+/* .catLinks {
+	margin-top: 5em;
+} */
 /* mobile menu */
 .mobileMenu .dropdown {
 	grid-column: 2;
 	grid-row: 2;
-
 }
 .mobileMenu .dropdown__item {
 }
-.mobileMenu .dropdown__link {
+/* .mobileMenu .dropdown__link {
+	position: relative;
+	display: block;
+	text-align: center;
+	padding: 3em 2em 1em;
+	font-size: 15px;
+	transition: all 1s linear;
+} */
+
+.dropdown__link {
 	position: relative;
 	display: block;
 	text-align: center;
@@ -146,8 +161,32 @@
 		background-color: var(--white);
 		height: 20em;
 		grid-column: 1/-1;
+		padding: 5em 2em 4em;
+		/* grid-column: 2; */
 	}
-	.mobileMenu .dropdown__link {
+	.mobileMenu .dropdown .dropdown__contents {
+		grid-column: 2;
+	}
+	.dropdown {
+		display: flex;
+		align-items: center;
+		/* justify-content: center; */
+		justify-content: space-between;
+		gap: 1em;
+		padding: 5em 0em 4em;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		width: 100%;
+	}
+	/* .mobileMenu .dropdown__link {
+		position: relative;
+		display: block;
+		text-align: center;
+		padding: 5em 2em 2em;
+		font-size: 15px;
+		transition: all 1s linear;
+	} */
+	.dropdown__link {
 		position: relative;
 		display: block;
 		text-align: center;
@@ -155,18 +194,7 @@
 		font-size: 15px;
 		transition: all 1s linear;
 	}
-
 	/* --------------------------------------- */
-	.dropdown {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1em;
-		padding: 5em 2em 4em;
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
-		width: 100%;
-	}
 	.dropdown__item + .dropdown__item {
 		margin-top: 0;
 	}

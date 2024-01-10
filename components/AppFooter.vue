@@ -47,7 +47,7 @@
 footer {
 	background-color: #000;
 	color: #fff;
-	/* margin-top: 4em; */
+	margin-top: 4em;
 }
 .footer__contents {
 	position: relative;

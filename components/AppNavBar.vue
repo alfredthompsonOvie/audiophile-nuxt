@@ -1,13 +1,14 @@
 <template>
 	<nav class="grid navbar">
 		<section class="grid__content navbar__contents">
-			<TheHamburger @click="toggleMenu"/>
+			<TheHamburger @click="toggleMenu" :isOpen="isMenuOpen"/>
 
-			<NuxtLink to="/" class="brand"><img src="~/assets/images/shared/audiophile.svg" alt="audiophile logo"></NuxtLink>
+			<NuxtLink to="/" class="brand"
+				><img src="~/assets/images/shared/audiophile.svg" alt="audiophile logo"
+			/></NuxtLink>
 
 			<!-- mobile menu -->
-			<BaseCategoryLinks  class="mobileMenu" v-show="isMenuOpen"/>
-
+			<BaseCategoryLinks class="mobileMenu" v-show="isMenuOpen" />
 
 			<!-- -->
 			<!-- desktop nav -->
@@ -21,19 +22,21 @@
 </template>
 
 <script setup>
-
 const isMenuOpen = ref(false);
 const windowWidth = ref(null);
 const isMobile = ref(null);
 
+const router = useRouter()
+router.afterEach(() => {
+	isMenuOpen.value = false
+})
 
 function toggleMenu() {
-	isMenuOpen.value = !isMenuOpen.value
+	isMenuOpen.value = !isMenuOpen.value;
 }
 
-
 function checkScreen() {
-  windowWidth.value = window.innerWidth;
+	windowWidth.value = window.innerWidth;
 	if (windowWidth.value <= 991) {
 		isMobile.value = true;
 		isMenuOpen.value = false;
@@ -44,9 +47,11 @@ function checkScreen() {
 	return;
 }
 onMounted(() => {
-  checkScreen();
-  window.addEventListener("resize", checkScreen);
-})
+	checkScreen();
+	window.addEventListener("resize", checkScreen);
+});
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -62,7 +67,6 @@ onMounted(() => {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 }
 .brand {
 	/* font-weight: 700; */
@@ -80,7 +84,6 @@ onMounted(() => {
 	grid-template-rows: 10em auto;
 	z-index: 20;
 }
-
 .overlay {
 	background-color: rgba(0, 0, 0, 0.4);
 	position: fixed;
@@ -102,6 +105,7 @@ onMounted(() => {
 		background-color: rgba(0, 0, 0, 0.2);
 		display: grid;
 		grid-template-columns: 1fr;
+		/* grid-template-columns: 1fr 10fr 1fr; */
 		grid-template-rows: 5em auto;
 		z-index: 20;
 	}

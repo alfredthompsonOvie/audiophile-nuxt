@@ -1,6 +1,6 @@
 <template>
   <div>
-    Earphones
+    id
   </div>
 </template>
 

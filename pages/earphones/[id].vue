@@ -1,6 +1,6 @@
 <template>
   <div>
-    Headphones
+
   </div>
 </template>
 
